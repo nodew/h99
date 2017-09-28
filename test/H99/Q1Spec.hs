@@ -1,23 +1,25 @@
-module H99.Q1Spec (
-  main,
-  spec
-) where
+{-# LANGUAGE ScopedTypeVariables #-}
+
+module H99.Q1Spec where
 
 import Test.Hspec
 import Test.QuickCheck
 
-import H99.Q1 (myLast, myLast')
-
-main :: IO ()
-main = hspec spec
+import H99.Q1
 
 spec :: Spec
 spec = do
   describe "Q1" $ do
-    it "mylast" $ do
-      myLast [1, 2, 3, 4] `shouldBe` 4
-      myLast ['x','y','z'] `shouldBe` 'z'
+    it "myLast fail on empty" $ do
+      myLast [] `shouldThrow` anyException
 
-    it "myLast'" $ do
-      myLast' [1, 2, 3, 4] `shouldBe` 4
-      myLast' ['x','y','z'] `shouldBe` 'z'
+    it "myLast works" $ property $ do
+      \(NonEmpty (xs :: [Int])) ->
+        myLast xs == last xs
+
+    it "myLast' fail on empty" $ do
+      myLast' [] `shouldThrow` anyException
+
+    it "myLast' works" $ property $ do
+      \(NonEmpty (xs :: [Int])) ->
+        myLast' xs == last xs

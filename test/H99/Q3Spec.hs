@@ -1,15 +1,9 @@
-module H99.Q3Spec (
-  main,
-  spec
-) where
+module H99.Q3Spec where
 
 import Test.Hspec
 import Test.QuickCheck
 
-import H99.Q3 (elementAt)
-
-main :: IO ()
-main = hspec spec
+import H99.Q3
 
 spec :: Spec
 spec = do

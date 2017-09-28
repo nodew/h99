@@ -1,15 +1,9 @@
-module H99.Q2Spec (
-  main,
-  spec
-) where
+module H99.Q2Spec where
 
 import Test.Hspec
 import Test.QuickCheck
 
-import H99.Q2 (myButLast, myButLast')
-
-main :: IO ()
-main = hspec spec
+import H99.Q2
 
 spec :: Spec
 spec = do
