@@ -1,0 +1,39 @@
+name: h99
+version: 0.0.1
+synopsis: Haskell 99 questions
+description: Haskell 99 questions
+maintainer: Joe Wang (wangqiao11@hotmail.com)
+license: MIT
+github: https://github.com/nodew/h99.git
+category:
+extra-source-files:
+
+ghc-options:
+  - -threaded
+  - -rtsopts
+
+dependencies:
+  - base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  exposed-modules: .
+
+executable:
+  main: Main.hs
+  source-dirs: app
+  dependencies:
+    - h99
+
+tests:
+  spec:
+    cpp-options: -DTEST
+    main: Spec.hs
+    source-dirs:
+      - test
+      - src
+    dependencies:
+      - base
+      - h99
+      - hspec == 2.*
+      - QuickCheck
