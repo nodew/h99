@@ -9,4 +9,8 @@ import Data.List
 -}
 
 pack :: Eq a => [a] -> [[a]]
-pack lst@(x:xs) = reverse $ foldl' (\acc@(l:rest) (a, b) -> if a /= b then [b]:acc else (b:l):rest) [[x]] $ zip lst xs
+pack lst@(x:xs) = reverse $ foldl' (\acc@(l:rest) (a, b) ->
+                                      if a /= b then
+                                        [b]:acc
+                                      else (b:l):rest)
+                                   [[x]] $ zip lst xs

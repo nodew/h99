@@ -17,13 +17,14 @@ dependencies:
 
 library:
   source-dirs: src
-  exposed-modules: .
+  exposed-modules: H99
 
-executable:
-  main: Main.hs
-  source-dirs: app
-  dependencies:
-    - h99
+executables:
+  h99:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - h99
 
 tests:
   spec:
