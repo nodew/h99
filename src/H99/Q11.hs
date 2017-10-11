@@ -1,15 +1,15 @@
 module H99.Q11 where
 
-  {-
-    Run-length encoding of a list. Use the result of problem P09 to
-    implement the so-called run-length encoding data compression method.
-    Only elements with duplicates are transferred as (N E) lists.
-    where N is the number of duplicates of the element E.
+{-
+  Run-length encoding of a list. Use the result of problem P09 to
+  implement the so-called run-length encoding data compression method.
+  Only elements with duplicates are transferred as (N E) lists.
+  where N is the number of duplicates of the element E.
 
-    encodeModified "aaaabccaadeeee"
-    => [Multiple 4 'a',Single 'b',Multiple 2 'c',
-        Multiple 2 'a',Single 'd',Multiple 4 'e']
-  -}
+  encodeModified "aaaabccaadeeee"
+  => [Multiple 4 'a',Single 'b',Multiple 2 'c',
+      Multiple 2 'a',Single 'd',Multiple 4 'e']
+-}
 
 data Encode a = Multiple Int a
               | Single a
