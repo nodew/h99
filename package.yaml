@@ -22,10 +22,7 @@ library:
     - H99
     - H99.Q23
     - H99.Q24
-  dependencies:
-    - base
-    - random
-
+    - H99.Q25
 executables:
   h99:
     main: Main.hs
@@ -41,7 +38,6 @@ tests:
       - test
       - src
     dependencies:
-      - base
       - h99
       - hspec == 2.*
       - QuickCheck
