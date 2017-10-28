@@ -9,4 +9,5 @@ spec :: Spec
 spec = do
   describe "Q40" $ do
     it "Goldbach's conjecture" $ do
-      goldbach 28 `shouldBe` (3, 25)
+      goldbach 12 `shouldBe` (5, 7)
+      goldbach 28 `shouldBe` (5, 23)
